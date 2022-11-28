@@ -7,8 +7,8 @@ import random
 app = Flask(__name__)
 app.config['SECRET_KEY'] = uuid4().hex
 
-app.config["SESSION_PERMANENT"] = True
-app.config["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "memcached"
 Session(app)
 
 socketio = SocketIO(app)
