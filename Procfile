@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app -b 0.0.0.0:$PORT -w 3 -k gevent --max-requests 250
+web: gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 wsgi:app
