@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT wsgi:app
+web: gunicorn wsgi:app -b 0.0.0.0:$PORT -w 3 -k gevent --max-requests 250
